@@ -210,6 +210,8 @@ class miniMaxAgent():
         moves = getMoves(self.board)
         bestmove = None
 
+        # INSERT BLOCKING CODE/CHECK
+
         for score, row, col in moves:
 
             self.board[row][col] = currPlayer
