@@ -323,9 +323,9 @@ class miniMaxAgent():
 
         # INSERT BLOCKING CODE/CHECK
         # THIS DOES OFFENCE 4s and 3s also!
-        priority = [["xxxx", "****"], ["xxx", "***"]]
-        fours = ["xxxx", "****"]
-        threes = ["xxx", "***"]
+        priority = [["****", "xxxx"], ["xxx", "***"]]
+        #fours = ["xxxx", "****"]
+        #threes = ["xxx", "***"]
         inv_BOARD = make_invert(BOARD)
         for string in priority:
             for i in range(len(string)):
