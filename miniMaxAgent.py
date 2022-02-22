@@ -345,7 +345,7 @@ class miniMaxAgent():
                         self.bestmove = (tup[0] - 1, tup[1])
                     elif (tup[0] + ind_pl) <= 14 and inv_BOARD[tup[0] + ind_pl][tup[1]] == "o":    
                         self.bestmove = (tup[0] + ind_pl, tup[1])
-                elif check_diagonal(BOARD, string[i]):
+                elif check_diagonal(BOARD, string[i]):                                    #OH, ONLY CHECKS LEADING DIAGONLS. I CAN FLIP THE BOARD AND MAKE IT DO BOTH, BUT LET'S SEE HOW THIS GOES FIRST
                     if (tup[0] -1) >= 0 and inv_BOARD[tup[0]-1][tup[1]] == "o":         
                         self.bestmove = (tup[0] - 1, tup[1])
                     elif (tup[0] + ind_pl) <= 14 and inv_BOARD[tup[0] + ind_pl][tup[1]] == "o":    
