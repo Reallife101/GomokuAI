@@ -21,316 +21,471 @@ def main():
         # for x in i:
         #     a[i][x] = 'p'
     # print(a[0])
-    win = GraphWin('ExampleWindow', 1000, 1000)
-    rect = Rectangle(Point(66, 1), Point(1, 66))
+    win = GraphWin('ExampleWindow', 750, 750)
+    rect = Rectangle(Point(50, 0), Point(0, 50))
     rect.setFill('purple')
-    rect2 = Rectangle(Point(132, 1), Point(66, 66))
+    rect2 = Rectangle(Point(100, 0), Point(50, 50))
     rect2.setFill('purple')
-    rect3 = Rectangle(Point(198, 1), Point(132, 66))
+    rect3 = Rectangle(Point(150, 0), Point(100, 50))
     rect3.setFill('purple')
-    rect4 = Rectangle(Point(264, 1), Point(198, 66))
+    rect4 = Rectangle(Point(200, 0), Point(150, 50))
     rect4.setFill('purple')
-    rect5 = Rectangle(Point(330, 1), Point(264, 66))
+    rect5 = Rectangle(Point(250, 0), Point(200, 50))
     rect5.setFill('purple')
-    rect6 = Rectangle(Point(396, 1), Point(330, 66))
+    rect6 = Rectangle(Point(300, 0), Point(250, 50))
     rect6.setFill('purple')
-    rect7 = Rectangle(Point(462, 1), Point(396, 66))
+    rect7 = Rectangle(Point(350, 0), Point(300, 50))
     rect7.setFill('purple')
-    rect8 = Rectangle(Point(528, 1), Point(462, 66))
+    rect8 = Rectangle(Point(400, 0), Point(350, 50))
     rect8.setFill('purple')
-    rect9 = Rectangle(Point(594, 1), Point(528, 66))
+    rect9 = Rectangle(Point(450, 0), Point(400, 50))
     rect9.setFill('purple')
-    rect10 = Rectangle(Point(660, 1), Point(594, 66))
+    rect10 = Rectangle(Point(500, 0), Point(450, 50))
     rect10.setFill('purple')
-    rect11 = Rectangle(Point(726, 1), Point(660, 66))
+    rect11 = Rectangle(Point(550, 0), Point(500, 50))
     rect11.setFill('purple')
-    rect12 = Rectangle(Point(792, 1), Point(726, 66))
+    rect12 = Rectangle(Point(600, 0), Point(550, 50))
     rect12.setFill('purple')
-    rect13 = Rectangle(Point(858, 1), Point(792, 66))
+    rect13 = Rectangle(Point(650, 0), Point(600, 50))
     rect13.setFill('purple')
-    rect14 = Rectangle(Point(924, 1), Point(858, 66))
+    rect14 = Rectangle(Point(700, 0), Point(650, 50))
     rect14.setFill('purple')
-    rect15 = Rectangle(Point(990, 1), Point(924, 66))
+    rect15 = Rectangle(Point(750, 0), Point(700, 50))
     rect15.setFill('purple')
 
-    rect21 = Rectangle(Point(66, 66), Point(1, 132))
+    rect21 = Rectangle(Point(50, 50), Point(0, 100))
     rect21.setFill('purple')
-    rect22 = Rectangle(Point(132, 66), Point(66, 132))
+    rect22 = Rectangle(Point(100, 50), Point(50, 100))
     rect22.setFill('purple')
-    rect23 = Rectangle(Point(198, 66), Point(132, 132))
+    rect23 = Rectangle(Point(150, 50), Point(100, 100))
     rect23.setFill('purple')
-    rect24 = Rectangle(Point(264, 66), Point(198, 132))
+    rect24 = Rectangle(Point(200, 50), Point(150, 100))
     rect24.setFill('purple')
-    rect25 = Rectangle(Point(330, 66), Point(264, 132))
+    rect25 = Rectangle(Point(250, 50), Point(200, 100))
     rect25.setFill('purple')
-    rect26 = Rectangle(Point(396, 66), Point(330, 132))
+    rect26 = Rectangle(Point(300, 50), Point(250, 100))
     rect26.setFill('purple')
-    rect27 = Rectangle(Point(462, 66), Point(396, 132))
+    rect27 = Rectangle(Point(350, 50), Point(300, 100))
     rect27.setFill('purple')
-    rect28 = Rectangle(Point(528, 66), Point(462, 132))
+    rect28 = Rectangle(Point(400, 50), Point(350, 100))
     rect28.setFill('purple')
-    rect29 = Rectangle(Point(594, 66), Point(528, 132))
+    rect29 = Rectangle(Point(450, 50), Point(400, 100))
     rect29.setFill('purple')
-    rect210 = Rectangle(Point(660, 66), Point(594, 132))
+    rect210 = Rectangle(Point(500, 50), Point(450, 100))
     rect210.setFill('purple')
-    rect211 = Rectangle(Point(726, 66), Point(660, 132))
+    rect211 = Rectangle(Point(550, 50), Point(500, 100))
     rect211.setFill('purple')
-    rect212 = Rectangle(Point(792, 66), Point(726, 132))
+    rect212 = Rectangle(Point(600, 50), Point(550, 100))
     rect212.setFill('purple')
-    rect213 = Rectangle(Point(858, 66), Point(792, 132))
+    rect213 = Rectangle(Point(650, 50), Point(600, 100))
     rect213.setFill('purple')
-    rect214 = Rectangle(Point(924, 66), Point(858, 132))
+    rect214 = Rectangle(Point(700, 50), Point(650, 100))
     rect214.setFill('purple')
-    rect215 = Rectangle(Point(990, 66), Point(924, 132))
+    rect215 = Rectangle(Point(750, 50), Point(700, 100))
     rect215.setFill('purple')
 
-    rect31 = Rectangle(Point(66, 132), Point(1, 198))
+    rect31 = Rectangle(Point(50, 100), Point(0, 150))
     rect31.setFill('purple')
-    rect32 = Rectangle(Point(132, 132), Point(66, 198))
+    rect32 = Rectangle(Point(100, 100), Point(50, 150))
     rect32.setFill('purple')
-    rect33 = Rectangle(Point(198, 132), Point(132, 198))
+    rect33 = Rectangle(Point(150, 100), Point(100, 150))
     rect33.setFill('purple')
-    rect34 = Rectangle(Point(264, 132), Point(198, 198))
+    rect34 = Rectangle(Point(200, 100), Point(150, 150))
     rect34.setFill('purple')
-    rect35 = Rectangle(Point(330, 132), Point(264, 198))
+    rect35 = Rectangle(Point(250, 100), Point(200, 150))
     rect35.setFill('purple')
-    rect36 = Rectangle(Point(396, 132), Point(330, 198))
+    rect36 = Rectangle(Point(300, 100), Point(250, 150))
     rect36.setFill('purple')
-    rect37 = Rectangle(Point(462, 132), Point(396, 198))
+    rect37 = Rectangle(Point(350, 100), Point(300, 150))
     rect37.setFill('purple')
-    rect38 = Rectangle(Point(528, 132), Point(462, 198))
+    rect38 = Rectangle(Point(400, 100), Point(350, 150))
     rect38.setFill('purple')
-    rect39 = Rectangle(Point(594, 132), Point(528, 198))
+    rect39 = Rectangle(Point(450, 100), Point(400, 150))
     rect39.setFill('purple')
-    rect310 = Rectangle(Point(660, 132), Point(594, 198))
+    rect310 = Rectangle(Point(500, 100), Point(450, 150))
     rect310.setFill('purple')
-    rect311 = Rectangle(Point(726, 132), Point(660, 198))
+    rect311 = Rectangle(Point(550, 100), Point(500, 150))
     rect311.setFill('purple')
-    rect312 = Rectangle(Point(792, 132), Point(726, 198))
+    rect312 = Rectangle(Point(600, 100), Point(550, 150))
     rect312.setFill('purple')
-    rect313 = Rectangle(Point(858, 132), Point(792, 198))
+    rect313 = Rectangle(Point(650, 100), Point(600, 150))
     rect313.setFill('purple')
-    rect314 = Rectangle(Point(924, 132), Point(858, 198))
+    rect314 = Rectangle(Point(700, 100), Point(650, 150))
     rect314.setFill('purple')
-    rect315 = Rectangle(Point(990, 132), Point(924, 198))
+    rect315 = Rectangle(Point(750, 100), Point(700, 150))
     rect315.setFill('purple')
 
-    rect41 = Rectangle(Point(66, 198), Point(1, 264))
+    rect41 = Rectangle(Point(50, 150), Point(0, 200))
     rect41.setFill('purple')
-    rect42 = Rectangle(Point(132, 198), Point(66, 264))
+    rect42 = Rectangle(Point(100, 150), Point(50, 200))
     rect42.setFill('purple')
-    rect43 = Rectangle(Point(198, 198), Point(132, 264))
+    rect43 = Rectangle(Point(150, 150), Point(100, 200))
     rect43.setFill('purple')
-    rect44 = Rectangle(Point(264, 198), Point(198, 264))
+    rect44 = Rectangle(Point(200, 150), Point(150, 200))
     rect44.setFill('purple')
-    rect45 = Rectangle(Point(330, 198), Point(264, 264))
+    rect45 = Rectangle(Point(250, 150), Point(200, 200))
     rect45.setFill('purple')
-    rect46 = Rectangle(Point(396, 198), Point(330, 264))
+    rect46 = Rectangle(Point(300, 150), Point(250, 200))
     rect46.setFill('purple')
-    rect47 = Rectangle(Point(462, 198), Point(396, 264))
+    rect47 = Rectangle(Point(350, 150), Point(300, 200))
     rect47.setFill('purple')
-    rect48 = Rectangle(Point(528, 198), Point(462, 264))
+    rect48 = Rectangle(Point(400, 150), Point(350, 200))
     rect48.setFill('purple')
-    rect49 = Rectangle(Point(594, 198), Point(528, 264))
+    rect49 = Rectangle(Point(450, 150), Point(400, 200))
     rect49.setFill('purple')
-    rect410 = Rectangle(Point(660, 198), Point(594, 264))
+    rect410 = Rectangle(Point(500, 150), Point(450, 200))
     rect410.setFill('purple')
-    rect411 = Rectangle(Point(726, 198), Point(660, 264))
+    rect411 = Rectangle(Point(550, 150), Point(500, 200))
     rect411.setFill('purple')
-    rect412 = Rectangle(Point(792, 198), Point(726, 264))
+    rect412 = Rectangle(Point(600, 150), Point(550, 200))
     rect412.setFill('purple')
-    rect413 = Rectangle(Point(858, 198), Point(792, 264))
+    rect413 = Rectangle(Point(650, 150), Point(600, 200))
     rect413.setFill('purple')
-    rect414 = Rectangle(Point(924, 198), Point(858, 264))
+    rect414 = Rectangle(Point(700, 150), Point(650, 200))
     rect414.setFill('purple')
-    rect415 = Rectangle(Point(990, 198), Point(924, 264))
+    rect415 = Rectangle(Point(750, 150), Point(700, 200))
     rect415.setFill('purple')
 
-    rect51 = Rectangle(Point(66, 264), Point(1, 330))
+    rect51 = Rectangle(Point(50, 200), Point(0, 250))
     rect51.setFill('purple')
-    rect52 = Rectangle(Point(132, 264), Point(66, 330))
+    rect52 = Rectangle(Point(100, 200), Point(50, 250))
     rect52.setFill('purple')
-    rect53 = Rectangle(Point(198, 264), Point(132, 330))
+    rect53 = Rectangle(Point(150, 200), Point(100, 250))
     rect53.setFill('purple')
-    rect54 = Rectangle(Point(264, 264), Point(198, 330))
+    rect54 = Rectangle(Point(200, 200), Point(150, 250))
     rect54.setFill('purple')
-    rect55 = Rectangle(Point(330, 264), Point(264, 330))
+    rect55 = Rectangle(Point(250, 200), Point(200, 250))
     rect55.setFill('purple')
-    rect56 = Rectangle(Point(396, 264), Point(330, 330))
+    rect56 = Rectangle(Point(300, 200), Point(250, 250))
     rect56.setFill('purple')
-    rect57 = Rectangle(Point(462, 264), Point(396, 330))
+    rect57 = Rectangle(Point(350, 200), Point(300, 250))
     rect57.setFill('purple')
-    rect58 = Rectangle(Point(528, 264), Point(462, 330))
+    rect58 = Rectangle(Point(400, 200), Point(350, 250))
     rect58.setFill('purple')
-    rect59 = Rectangle(Point(594, 264), Point(528, 330))
+    rect59 = Rectangle(Point(450, 200), Point(400, 250))
     rect59.setFill('purple')
-    rect510 = Rectangle(Point(660, 264), Point(594, 330))
+    rect510 = Rectangle(Point(500, 200), Point(450, 250))
     rect510.setFill('purple')
-    rect511 = Rectangle(Point(726, 264), Point(660, 330))
+    rect511 = Rectangle(Point(550, 200), Point(500, 250))
     rect511.setFill('purple')
-    rect512 = Rectangle(Point(792, 264), Point(726, 330))
+    rect512 = Rectangle(Point(600, 200), Point(550, 250))
     rect512.setFill('purple')
-    rect513 = Rectangle(Point(858, 264), Point(792, 330))
+    rect513 = Rectangle(Point(650, 200), Point(600, 250))
     rect513.setFill('purple')
-    rect514 = Rectangle(Point(924, 264), Point(858, 330))
+    rect514 = Rectangle(Point(700, 200), Point(650, 250))
     rect514.setFill('purple')
-    rect515 = Rectangle(Point(990, 264), Point(924, 330))
+    rect515 = Rectangle(Point(750, 200), Point(700, 250))
     rect515.setFill('purple')
 
-    rect61 = Rectangle(Point(66, 330), Point(1, 396))
+    rect61 = Rectangle(Point(50, 250), Point(0, 300))
     rect61.setFill('purple')
-    rect62 = Rectangle(Point(132, 330), Point(66, 396))
+    rect62 = Rectangle(Point(100, 250), Point(50, 300))
     rect62.setFill('purple')
-    rect63 = Rectangle(Point(198, 330), Point(132, 396))
+    rect63 = Rectangle(Point(150, 250), Point(100, 300))
     rect63.setFill('purple')
-    rect64 = Rectangle(Point(264, 330), Point(198, 396))
+    rect64 = Rectangle(Point(200, 250), Point(150, 300))
     rect64.setFill('purple')
-    rect65 = Rectangle(Point(330, 330), Point(264, 396))
+    rect65 = Rectangle(Point(250, 250), Point(200, 300))
     rect65.setFill('purple')
-    rect66 = Rectangle(Point(396, 330), Point(330, 396))
+    rect66 = Rectangle(Point(300, 250), Point(250, 300))
     rect66.setFill('purple')
-    rect67 = Rectangle(Point(462, 330), Point(396, 396))
+    rect67 = Rectangle(Point(350, 250), Point(300, 300))
     rect67.setFill('purple')
-    rect68 = Rectangle(Point(528, 330), Point(462, 396))
+    rect68 = Rectangle(Point(400, 250), Point(350, 300))
     rect68.setFill('purple')
-    rect69 = Rectangle(Point(594, 330), Point(528, 396))
+    rect69 = Rectangle(Point(450, 250), Point(400, 300))
     rect69.setFill('purple')
-    rect610 = Rectangle(Point(660, 330), Point(594, 396))
+    rect610 = Rectangle(Point(500, 250), Point(450, 300))
     rect610.setFill('purple')
-    rect611 = Rectangle(Point(726, 330), Point(660, 396))
+    rect611 = Rectangle(Point(550, 250), Point(500, 300))
     rect611.setFill('purple')
-    rect612 = Rectangle(Point(792, 330), Point(726, 396))
+    rect612 = Rectangle(Point(600, 250), Point(550, 300))
     rect612.setFill('purple')
-    rect613 = Rectangle(Point(858, 330), Point(792, 396))
+    rect613 = Rectangle(Point(650, 250), Point(600, 300))
     rect613.setFill('purple')
-    rect614 = Rectangle(Point(924, 330), Point(858, 396))
+    rect614 = Rectangle(Point(700, 250), Point(650, 300))
     rect614.setFill('purple')
-    rect615 = Rectangle(Point(990, 330), Point(924, 396))
+    rect615 = Rectangle(Point(750, 250), Point(700, 300))
     rect615.setFill('purple')
 
-    rect71 = Rectangle(Point(66, 396), Point(1, 462))
+    rect71 = Rectangle(Point(50, 300), Point(0, 350))
     rect71.setFill('purple')
-    rect72 = Rectangle(Point(132, 396), Point(66, 462))
+    rect72 = Rectangle(Point(100, 300), Point(50, 350))
     rect72.setFill('purple')
-    rect73 = Rectangle(Point(198, 396), Point(132, 462))
+    rect73 = Rectangle(Point(150, 300), Point(100, 350))
     rect73.setFill('purple')
-    rect74 = Rectangle(Point(264, 396), Point(198, 462))
+    rect74 = Rectangle(Point(200, 300), Point(150, 350))
     rect74.setFill('purple')
-    rect75 = Rectangle(Point(330, 396), Point(264, 462))
+    rect75 = Rectangle(Point(250, 300), Point(200, 350))
     rect75.setFill('purple')
-    rect76 = Rectangle(Point(396, 396), Point(330, 462))
+    rect76 = Rectangle(Point(300, 300), Point(250, 350))
     rect76.setFill('purple')
-    rect77 = Rectangle(Point(462, 396), Point(396, 462))
+    rect77 = Rectangle(Point(350, 300), Point(300, 350))
     rect77.setFill('purple')
-    rect78 = Rectangle(Point(528, 396), Point(462, 462))
+    rect78 = Rectangle(Point(400, 300), Point(350, 350))
     rect78.setFill('purple')
-    rect79 = Rectangle(Point(594, 396), Point(528, 462))
+    rect79 = Rectangle(Point(450, 300), Point(400, 350))
     rect79.setFill('purple')
-    rect710 = Rectangle(Point(660, 396), Point(594, 462))
+    rect710 = Rectangle(Point(500, 300), Point(450, 350))
     rect710.setFill('purple')
-    rect711 = Rectangle(Point(726, 396), Point(660, 462))
+    rect711 = Rectangle(Point(550, 300), Point(500, 350))
     rect711.setFill('purple')
-    rect712 = Rectangle(Point(792, 396), Point(726, 462))
+    rect712 = Rectangle(Point(600, 300), Point(550, 350))
     rect712.setFill('purple')
-    rect713 = Rectangle(Point(858, 396), Point(792, 462))
+    rect713 = Rectangle(Point(650, 300), Point(600, 350))
     rect713.setFill('purple')
-    rect714 = Rectangle(Point(924, 396), Point(858, 462))
+    rect714 = Rectangle(Point(700, 300), Point(650, 350))
     rect714.setFill('purple')
-    rect715 = Rectangle(Point(990, 396), Point(924, 462))
+    rect715 = Rectangle(Point(750, 300), Point(700, 350))
     rect715.setFill('purple')
 
-    rect81 = Rectangle(Point(66, 462), Point(1, 528))
+    rect81 = Rectangle(Point(50, 350), Point(0, 400))
     rect81.setFill('purple')
-    rect82 = Rectangle(Point(132, 462), Point(66, 528))
+    rect82 = Rectangle(Point(100, 350), Point(50, 400))
     rect82.setFill('purple')
-    rect83 = Rectangle(Point(198, 462), Point(132, 528))
+    rect83 = Rectangle(Point(150, 350), Point(100, 400))
     rect83.setFill('purple')
-    rect84 = Rectangle(Point(264, 462), Point(198, 528))
+    rect84 = Rectangle(Point(200, 350), Point(150, 400))
     rect84.setFill('purple')
-    rect85 = Rectangle(Point(330, 462), Point(264, 528))
+    rect85 = Rectangle(Point(250, 350), Point(200, 400))
     rect85.setFill('purple')
-    rect86 = Rectangle(Point(396, 462), Point(330, 528))
+    rect86 = Rectangle(Point(300, 350), Point(250, 400))
     rect86.setFill('purple')
-    rect87 = Rectangle(Point(462, 462), Point(396, 528))
+    rect87 = Rectangle(Point(350, 350), Point(300, 400))
     rect87.setFill('purple')
-    rect88 = Rectangle(Point(528, 462), Point(462, 528))
+    rect88 = Rectangle(Point(400, 350), Point(350, 400))
     rect88.setFill('purple')
-    rect89 = Rectangle(Point(594, 462), Point(528, 528))
+    rect89 = Rectangle(Point(450, 350), Point(400, 400))
     rect89.setFill('purple')
-    rect810 = Rectangle(Point(660, 462), Point(594, 528))
+    rect810 = Rectangle(Point(500, 350), Point(450, 400))
     rect810.setFill('purple')
-    rect811 = Rectangle(Point(726, 462), Point(660, 528))
+    rect811 = Rectangle(Point(550, 350), Point(500, 400))
     rect811.setFill('purple')
-    rect812 = Rectangle(Point(792, 462), Point(726, 528))
+    rect812 = Rectangle(Point(600, 350), Point(550, 400))
     rect812.setFill('purple')
-    rect813 = Rectangle(Point(858, 462), Point(792, 528))
+    rect813 = Rectangle(Point(650, 350), Point(600, 400))
     rect813.setFill('purple')
-    rect814 = Rectangle(Point(924, 462), Point(858, 528))
+    rect814 = Rectangle(Point(700, 350), Point(650, 400))
     rect814.setFill('purple')
-    rect815 = Rectangle(Point(990, 462), Point(924, 528))
+    rect815 = Rectangle(Point(750, 350), Point(700, 400))
     rect815.setFill('purple')
 
-    rect91 = Rectangle(Point(66, 528), Point(1, 594))
+    rect91 = Rectangle(Point(50, 400), Point(0, 450))
     rect91.setFill('purple')
-    rect92 = Rectangle(Point(132, 528), Point(66, 594))
+    rect92 = Rectangle(Point(100, 400), Point(50, 450))
     rect92.setFill('purple')
-    rect93 = Rectangle(Point(198, 528), Point(132, 594))
+    rect93 = Rectangle(Point(150, 400), Point(100, 450))
     rect93.setFill('purple')
-    rect94 = Rectangle(Point(264, 528), Point(198, 594))
+    rect94 = Rectangle(Point(200, 400), Point(150, 450))
     rect94.setFill('purple')
-    rect95 = Rectangle(Point(330, 528), Point(264, 594))
+    rect95 = Rectangle(Point(250, 400), Point(200, 450))
     rect95.setFill('purple')
-    rect96 = Rectangle(Point(396, 528), Point(330, 594))
+    rect96 = Rectangle(Point(300, 400), Point(250, 450))
     rect96.setFill('purple')
-    rect97 = Rectangle(Point(462, 528), Point(396, 594))
+    rect97 = Rectangle(Point(350, 400), Point(300, 450))
     rect97.setFill('purple')
-    rect98 = Rectangle(Point(528, 528), Point(462, 594))
+    rect98 = Rectangle(Point(400, 400), Point(350, 450))
     rect98.setFill('purple')
-    rect99 = Rectangle(Point(594, 528), Point(528, 594))
+    rect99 = Rectangle(Point(450, 400), Point(400, 450))
     rect99.setFill('purple')
-    rect910 = Rectangle(Point(660, 528), Point(594, 594))
+    rect910 = Rectangle(Point(500, 400), Point(450, 450))
     rect910.setFill('purple')
-    rect911 = Rectangle(Point(726, 528), Point(660, 594))
+    rect911 = Rectangle(Point(550, 400), Point(500, 450))
     rect911.setFill('purple')
-    rect912 = Rectangle(Point(792, 528), Point(726, 594))
+    rect912 = Rectangle(Point(600, 400), Point(550, 450))
     rect912.setFill('purple')
-    rect913 = Rectangle(Point(858, 528), Point(792, 594))
+    rect913 = Rectangle(Point(650, 400), Point(600, 450))
     rect913.setFill('purple')
-    rect914 = Rectangle(Point(924, 528), Point(858, 594))
+    rect914 = Rectangle(Point(700, 400), Point(650, 450))
     rect914.setFill('purple')
-    rect915 = Rectangle(Point(990, 528), Point(924, 594))
+    rect915 = Rectangle(Point(750, 400), Point(700, 450))
     rect915.setFill('purple')
 
-    rect101 = Rectangle(Point(66, 594), Point(1, 660))
+    rect101 = Rectangle(Point(50, 450), Point(0, 500))
     rect101.setFill('purple')
-    rect102 = Rectangle(Point(132, 594), Point(66, 660))
+    rect102 = Rectangle(Point(100, 450), Point(50, 500))
     rect102.setFill('purple')
-    rect103 = Rectangle(Point(198, 594), Point(132, 660))
+    rect103 = Rectangle(Point(150, 450), Point(100, 500))
     rect103.setFill('purple')
-    rect104 = Rectangle(Point(264, 594), Point(198, 660))
+    rect104 = Rectangle(Point(200, 450), Point(150, 500))
     rect104.setFill('purple')
-    rect105 = Rectangle(Point(330, 594), Point(264, 660))
+    rect105 = Rectangle(Point(250, 450), Point(200, 500))
     rect105.setFill('purple')
-    rect106 = Rectangle(Point(396, 594), Point(330, 660))
+    rect106 = Rectangle(Point(300, 450), Point(250, 500))
     rect106.setFill('purple')
-    rect107 = Rectangle(Point(462, 594), Point(396, 660))
+    rect107 = Rectangle(Point(350, 450), Point(300, 500))
     rect107.setFill('purple')
-    rect108 = Rectangle(Point(528, 594), Point(462, 660))
+    rect108 = Rectangle(Point(400, 450), Point(350, 500))
     rect108.setFill('purple')
-    rect109 = Rectangle(Point(594, 594), Point(528, 660))
+    rect109 = Rectangle(Point(450, 450), Point(400, 500))
     rect109.setFill('purple')
-    rect1010 = Rectangle(Point(660, 594), Point(594, 660))
+    rect1010 = Rectangle(Point(500, 450), Point(450, 500))
     rect1010.setFill('purple')
-    rect1011 = Rectangle(Point(726, 594), Point(660, 660))
+    rect1011 = Rectangle(Point(550, 450), Point(500, 500))
     rect1011.setFill('purple')
-    rect1012 = Rectangle(Point(792, 594), Point(726, 660))
+    rect1012 = Rectangle(Point(600, 450), Point(550, 500))
     rect1012.setFill('purple')
-    rect1013 = Rectangle(Point(858, 594), Point(792, 660))
+    rect1013 = Rectangle(Point(650, 450), Point(600, 500))
     rect1013.setFill('purple')
-    rect1014 = Rectangle(Point(924, 594), Point(858, 660))
+    rect1014 = Rectangle(Point(700, 450), Point(650, 500))
     rect1014.setFill('purple')
-    rect1015 = Rectangle(Point(990, 594), Point(924, 660))
+    rect1015 = Rectangle(Point(750, 450), Point(700, 500))
     rect1015.setFill('purple')
+
+    rect111 = Rectangle(Point(50, 500), Point(0, 550))
+    rect111.setFill('purple')
+    rect112 = Rectangle(Point(100, 500), Point(50, 550))
+    rect112.setFill('purple')
+    rect113 = Rectangle(Point(150, 500), Point(100, 550))
+    rect113.setFill('purple')
+    rect114 = Rectangle(Point(200, 500), Point(150, 550))
+    rect114.setFill('purple')
+    rect115 = Rectangle(Point(250, 500), Point(200, 550))
+    rect115.setFill('purple')
+    rect116 = Rectangle(Point(300, 500), Point(250, 550))
+    rect116.setFill('purple')
+    rect117 = Rectangle(Point(350, 500), Point(300, 550))
+    rect117.setFill('purple')
+    rect118 = Rectangle(Point(400, 500), Point(350, 550))
+    rect118.setFill('purple')
+    rect119 = Rectangle(Point(450, 500), Point(400, 550))
+    rect119.setFill('purple')
+    rect1110 = Rectangle(Point(500, 500), Point(450, 550))
+    rect1110.setFill('purple')
+    rect1111 = Rectangle(Point(550, 500), Point(500, 550))
+    rect1111.setFill('purple')
+    rect1112 = Rectangle(Point(600, 500), Point(550, 550))
+    rect1112.setFill('purple')
+    rect1113 = Rectangle(Point(650, 500), Point(600, 550))
+    rect1113.setFill('purple')
+    rect1114 = Rectangle(Point(700, 500), Point(650, 550))
+    rect1114.setFill('purple')
+    rect1115 = Rectangle(Point(750, 500), Point(700, 550))
+    rect1115.setFill('purple')
+
+    rect121 = Rectangle(Point(50, 550), Point(0, 600))
+    rect121.setFill('purple')
+    rect122 = Rectangle(Point(100, 550), Point(50, 600))
+    rect122.setFill('purple')
+    rect123 = Rectangle(Point(150, 550), Point(100, 600))
+    rect123.setFill('purple')
+    rect124 = Rectangle(Point(200, 550), Point(150, 600))
+    rect124.setFill('purple')
+    rect125 = Rectangle(Point(250, 550), Point(200, 600))
+    rect125.setFill('purple')
+    rect126 = Rectangle(Point(300, 550), Point(250, 600))
+    rect126.setFill('purple')
+    rect127 = Rectangle(Point(350, 550), Point(300, 600))
+    rect127.setFill('purple')
+    rect128 = Rectangle(Point(400, 550), Point(350, 600))
+    rect128.setFill('purple')
+    rect129 = Rectangle(Point(450, 550), Point(400, 600))
+    rect129.setFill('purple')
+    rect1210 = Rectangle(Point(500, 550), Point(450, 600))
+    rect1210.setFill('purple')
+    rect1211 = Rectangle(Point(550, 550), Point(500, 600))
+    rect1211.setFill('purple')
+    rect1212 = Rectangle(Point(600, 550), Point(550, 600))
+    rect1212.setFill('purple')
+    rect1213 = Rectangle(Point(650, 550), Point(600, 600))
+    rect1213.setFill('purple')
+    rect1214 = Rectangle(Point(700, 550), Point(650, 600))
+    rect1214.setFill('purple')
+    rect1215 = Rectangle(Point(750, 550), Point(700, 600))
+    rect1215.setFill('purple')
+
+    rect131 = Rectangle(Point(50, 600), Point(0, 650))
+    rect131.setFill('purple')
+    rect132 = Rectangle(Point(100, 600), Point(50, 650))
+    rect132.setFill('purple')
+    rect133 = Rectangle(Point(150, 600), Point(100, 650))
+    rect133.setFill('purple')
+    rect134 = Rectangle(Point(200, 600), Point(150, 650))
+    rect134.setFill('purple')
+    rect135 = Rectangle(Point(250, 600), Point(200, 650))
+    rect135.setFill('purple')
+    rect136 = Rectangle(Point(300, 600), Point(250, 650))
+    rect136.setFill('purple')
+    rect137 = Rectangle(Point(350, 600), Point(300, 650))
+    rect137.setFill('purple')
+    rect138 = Rectangle(Point(400, 600), Point(350, 650))
+    rect138.setFill('purple')
+    rect139 = Rectangle(Point(450, 600), Point(400, 650))
+    rect139.setFill('purple')
+    rect1310 = Rectangle(Point(500, 600), Point(450, 650))
+    rect1310.setFill('purple')
+    rect1311 = Rectangle(Point(550, 600), Point(500, 650))
+    rect1311.setFill('purple')
+    rect1312 = Rectangle(Point(600, 600), Point(550, 650))
+    rect1312.setFill('purple')
+    rect1313 = Rectangle(Point(650, 600), Point(600, 650))
+    rect1313.setFill('purple')
+    rect1314 = Rectangle(Point(700, 600), Point(650, 650))
+    rect1314.setFill('purple')
+    rect1315 = Rectangle(Point(750, 600), Point(700, 650))
+    rect1315.setFill('purple')
+
+    rect141 = Rectangle(Point(50, 650), Point(0, 700))
+    rect141.setFill('purple')
+    rect142 = Rectangle(Point(100, 650), Point(50, 700))
+    rect142.setFill('purple')
+    rect143 = Rectangle(Point(150, 650), Point(100, 700))
+    rect143.setFill('purple')
+    rect144 = Rectangle(Point(200, 650), Point(150, 700))
+    rect144.setFill('purple')
+    rect145 = Rectangle(Point(250, 650), Point(200, 700))
+    rect145.setFill('purple')
+    rect146 = Rectangle(Point(300, 650), Point(250, 700))
+    rect146.setFill('purple')
+    rect147 = Rectangle(Point(350, 650), Point(300, 700))
+    rect147.setFill('purple')
+    rect148 = Rectangle(Point(400, 650), Point(350, 700))
+    rect148.setFill('purple')
+    rect149 = Rectangle(Point(450, 650), Point(400, 700))
+    rect149.setFill('purple')
+    rect1410 = Rectangle(Point(500, 650), Point(450, 700))
+    rect1410.setFill('purple')
+    rect1411 = Rectangle(Point(550, 650), Point(500, 700))
+    rect1411.setFill('purple')
+    rect1412 = Rectangle(Point(600, 650), Point(550, 700))
+    rect1412.setFill('purple')
+    rect1413 = Rectangle(Point(650, 650), Point(600, 700))
+    rect1413.setFill('purple')
+    rect1414 = Rectangle(Point(700, 650), Point(650, 700))
+    rect1414.setFill('purple')
+    rect1415 = Rectangle(Point(750, 650), Point(700, 700))
+    rect1415.setFill('purple')
+
+    rect151 = Rectangle(Point(50, 700), Point(0, 750))
+    rect151.setFill('purple')
+    rect152 = Rectangle(Point(100, 700), Point(50, 750))
+    rect152.setFill('purple')
+    rect153 = Rectangle(Point(150, 700), Point(100, 750))
+    rect153.setFill('purple')
+    rect154 = Rectangle(Point(200, 700), Point(150, 750))
+    rect154.setFill('purple')
+    rect155 = Rectangle(Point(250, 700), Point(200, 750))
+    rect155.setFill('purple')
+    rect156 = Rectangle(Point(300, 700), Point(250, 750))
+    rect156.setFill('purple')
+    rect157 = Rectangle(Point(350, 700), Point(300, 750))
+    rect157.setFill('purple')
+    rect158 = Rectangle(Point(400, 700), Point(350, 750))
+    rect158.setFill('purple')
+    rect159 = Rectangle(Point(450, 700), Point(400, 750))
+    rect159.setFill('purple')
+    rect1510 = Rectangle(Point(500, 700), Point(450, 750))
+    rect1510.setFill('purple')
+    rect1511 = Rectangle(Point(550, 700), Point(500, 750))
+    rect1511.setFill('purple')
+    rect1512 = Rectangle(Point(600, 700), Point(550, 750))
+    rect1512.setFill('purple')
+    rect1513 = Rectangle(Point(650, 700), Point(600, 750))
+    rect1513.setFill('purple')
+    rect1514 = Rectangle(Point(700, 700), Point(650, 750))
+    rect1514.setFill('purple')
+    rect1515 = Rectangle(Point(750, 700), Point(700, 750))
+    rect1515.setFill('purple')
 
     rect.draw(win)
     rect2.draw(win)
@@ -491,6 +646,86 @@ def main():
     rect1013.draw(win)
     rect1014.draw(win)
     rect1015.draw(win)
+
+    rect111.draw(win)
+    rect112.draw(win)
+    rect113.draw(win)
+    rect114.draw(win)
+    rect115.draw(win)
+    rect116.draw(win)
+    rect117.draw(win)
+    rect118.draw(win)
+    rect119.draw(win)
+    rect1110.draw(win)
+    rect1111.draw(win)
+    rect1112.draw(win)
+    rect1113.draw(win)
+    rect1114.draw(win)
+    rect1115.draw(win)
+
+    rect121.draw(win)
+    rect122.draw(win)
+    rect123.draw(win)
+    rect124.draw(win)
+    rect125.draw(win)
+    rect126.draw(win)
+    rect127.draw(win)
+    rect128.draw(win)
+    rect129.draw(win)
+    rect1210.draw(win)
+    rect1211.draw(win)
+    rect1212.draw(win)
+    rect1213.draw(win)
+    rect1214.draw(win)
+    rect1215.draw(win)
+
+    rect131.draw(win)
+    rect132.draw(win)
+    rect133.draw(win)
+    rect134.draw(win)
+    rect135.draw(win)
+    rect136.draw(win)
+    rect137.draw(win)
+    rect138.draw(win)
+    rect139.draw(win)
+    rect1310.draw(win)
+    rect1311.draw(win)
+    rect1312.draw(win)
+    rect1313.draw(win)
+    rect1314.draw(win)
+    rect1315.draw(win)
+
+    rect141.draw(win)
+    rect142.draw(win)
+    rect143.draw(win)
+    rect144.draw(win)
+    rect145.draw(win)
+    rect146.draw(win)
+    rect147.draw(win)
+    rect148.draw(win)
+    rect149.draw(win)
+    rect1410.draw(win)
+    rect1411.draw(win)
+    rect1412.draw(win)
+    rect1413.draw(win)
+    rect1414.draw(win)
+    rect1415.draw(win)
+
+    rect151.draw(win)
+    rect152.draw(win)
+    rect153.draw(win)
+    rect154.draw(win)
+    rect155.draw(win)
+    rect156.draw(win)
+    rect157.draw(win)
+    rect158.draw(win)
+    rect159.draw(win)
+    rect1510.draw(win)
+    rect1511.draw(win)
+    rect1512.draw(win)
+    rect1513.draw(win)
+    rect1514.draw(win)
+    rect1515.draw(win)
 
     while(1):
         mousePos = win.getMouse()
@@ -1563,6 +1798,535 @@ def main():
                 rect1015.setFill("white")
                 i = 1
 
+        elif isClicked(rect111, mousePos):
+            if i == 1:
+                rect111.setFill("black")
+                i = 2
+            else:
+                rect111.setFill("white")
+                i = 1
+        elif isClicked(rect112, mousePos):
+            if i == 1:
+                rect112.setFill("black")
+                i = 2
+            else:
+                rect112.setFill("white")
+                i = 1
+        elif isClicked(rect113, mousePos):
+            if i == 1:
+                rect113.setFill("black")
+                i = 2
+            else:
+                rect113.setFill("white")
+                i = 1
+        elif isClicked(rect114, mousePos):
+            if i == 1:
+                rect114.setFill("black")
+                i = 2
+            else:
+                rect114.setFill("white")
+                i = 1
+        elif isClicked(rect115, mousePos):
+            if i == 1:
+                rect115.setFill("black")
+                i = 2
+            else:
+                rect115.setFill("white")
+                i = 1
+        elif isClicked(rect116, mousePos):
+            if i == 1:
+                rect116.setFill("black")
+                i = 2
+            else:
+                rect116.setFill("white")
+                i = 1
+        elif isClicked(rect117, mousePos):
+            if i == 1:
+                rect117.setFill("black")
+                i = 2
+            else:
+                rect117.setFill("white")
+                i = 1
+        elif isClicked(rect118, mousePos):
+            if i == 1:
+                rect118.setFill("black")
+                i = 2
+            else:
+                rect118.setFill("white")
+                i = 1
+        elif isClicked(rect119, mousePos):
+            if i == 1:
+                rect119.setFill("black")
+                i = 2
+            else:
+                rect119.setFill("white")
+                i = 1
+        elif isClicked(rect1110, mousePos):
+            if i == 1:
+                rect1110.setFill("black")
+                i = 2
+            else:
+                rect1110.setFill("white")
+                i = 1
+        elif isClicked(rect1111, mousePos):
+            if i == 1:
+                rect1111.setFill("black")
+                i = 2
+            else:
+                rect1111.setFill("white")
+                i = 1
+        elif isClicked(rect1112, mousePos):
+            if i == 1:
+                rect1112.setFill("black")
+                i = 2
+            else:
+                rect1112.setFill("white")
+                i = 1
+        elif isClicked(rect1113, mousePos):
+            if i == 1:
+                rect1113.setFill("black")
+                i = 2
+            else:
+                rect1113.setFill("white")
+                i = 1
+        elif isClicked(rect1114, mousePos):
+            if i == 1:
+                rect1114.setFill("black")
+                i = 2
+            else:
+                rect1114.setFill("white")
+                i = 1
+        elif isClicked(rect1115, mousePos):
+            if i == 1:
+                rect1115.setFill("black")
+                i = 2
+            else:
+                rect1115.setFill("white")
+                i = 1
+
+        elif isClicked(rect121, mousePos):
+            if i == 1:
+                rect121.setFill("black")
+                i = 2
+            else:
+                rect121.setFill("white")
+                i = 1
+        elif isClicked(rect122, mousePos):
+            if i == 1:
+                rect122.setFill("black")
+                i = 2
+            else:
+                rect122.setFill("white")
+                i = 1
+        elif isClicked(rect123, mousePos):
+            if i == 1:
+                rect123.setFill("black")
+                i = 2
+            else:
+                rect123.setFill("white")
+                i = 1
+        elif isClicked(rect124, mousePos):
+            if i == 1:
+                rect124.setFill("black")
+                i = 2
+            else:
+                rect124.setFill("white")
+                i = 1
+        elif isClicked(rect125, mousePos):
+            if i == 1:
+                rect125.setFill("black")
+                i = 2
+            else:
+                rect125.setFill("white")
+                i = 1
+        elif isClicked(rect126, mousePos):
+            if i == 1:
+                rect126.setFill("black")
+                i = 2
+            else:
+                rect126.setFill("white")
+                i = 1
+        elif isClicked(rect127, mousePos):
+            if i == 1:
+                rect127.setFill("black")
+                i = 2
+            else:
+                rect127.setFill("white")
+                i = 1
+        elif isClicked(rect128, mousePos):
+            if i == 1:
+                rect128.setFill("black")
+                i = 2
+            else:
+                rect128.setFill("white")
+                i = 1
+        elif isClicked(rect129, mousePos):
+            if i == 1:
+                rect129.setFill("black")
+                i = 2
+            else:
+                rect129.setFill("white")
+                i = 1
+        elif isClicked(rect1210, mousePos):
+            if i == 1:
+                rect1210.setFill("black")
+                i = 2
+            else:
+                rect1210.setFill("white")
+                i = 1
+        elif isClicked(rect1211, mousePos):
+            if i == 1:
+                rect1211.setFill("black")
+                i = 2
+            else:
+                rect1211.setFill("white")
+                i = 1
+        elif isClicked(rect1212, mousePos):
+            if i == 1:
+                rect1212.setFill("black")
+                i = 2
+            else:
+                rect1212.setFill("white")
+                i = 1
+        elif isClicked(rect1213, mousePos):
+            if i == 1:
+                rect1213.setFill("black")
+                i = 2
+            else:
+                rect1213.setFill("white")
+                i = 1
+        elif isClicked(rect1214, mousePos):
+            if i == 1:
+                rect1214.setFill("black")
+                i = 2
+            else:
+                rect1214.setFill("white")
+                i = 1
+        elif isClicked(rect1215, mousePos):
+            if i == 1:
+                rect1215.setFill("black")
+                i = 2
+            else:
+                rect1215.setFill("white")
+                i = 1
+
+        elif isClicked(rect131, mousePos):
+            if i == 1:
+                rect131.setFill("black")
+                i = 2
+            else:
+                rect131.setFill("white")
+                i = 1
+        elif isClicked(rect132, mousePos):
+            if i == 1:
+                rect132.setFill("black")
+                i = 2
+            else:
+                rect132.setFill("white")
+                i = 1
+        elif isClicked(rect133, mousePos):
+            if i == 1:
+                rect133.setFill("black")
+                i = 2
+            else:
+                rect133.setFill("white")
+                i = 1
+        elif isClicked(rect134, mousePos):
+            if i == 1:
+                rect134.setFill("black")
+                i = 2
+            else:
+                rect134.setFill("white")
+                i = 1
+        elif isClicked(rect135, mousePos):
+            if i == 1:
+                rect135.setFill("black")
+                i = 2
+            else:
+                rect135.setFill("white")
+                i = 1
+        elif isClicked(rect136, mousePos):
+            if i == 1:
+                rect136.setFill("black")
+                i = 2
+            else:
+                rect136.setFill("white")
+                i = 1
+        elif isClicked(rect137, mousePos):
+            if i == 1:
+                rect137.setFill("black")
+                i = 2
+            else:
+                rect137.setFill("white")
+                i = 1
+        elif isClicked(rect138, mousePos):
+            if i == 1:
+                rect138.setFill("black")
+                i = 2
+            else:
+                rect138.setFill("white")
+                i = 1
+        elif isClicked(rect139, mousePos):
+            if i == 1:
+                rect139.setFill("black")
+                i = 2
+            else:
+                rect139.setFill("white")
+                i = 1
+        elif isClicked(rect1310, mousePos):
+            if i == 1:
+                rect1310.setFill("black")
+                i = 2
+            else:
+                rect1310.setFill("white")
+                i = 1
+        elif isClicked(rect1311, mousePos):
+            if i == 1:
+                rect1311.setFill("black")
+                i = 2
+            else:
+                rect1311.setFill("white")
+                i = 1
+        elif isClicked(rect1312, mousePos):
+            if i == 1:
+                rect1312.setFill("black")
+                i = 2
+            else:
+                rect1312.setFill("white")
+                i = 1
+        elif isClicked(rect1313, mousePos):
+            if i == 1:
+                rect1313.setFill("black")
+                i = 2
+            else:
+                rect1313.setFill("white")
+                i = 1
+        elif isClicked(rect1314, mousePos):
+            if i == 1:
+                rect1314.setFill("black")
+                i = 2
+            else:
+                rect1314.setFill("white")
+                i = 1
+        elif isClicked(rect1315, mousePos):
+            if i == 1:
+                rect1315.setFill("black")
+                i = 2
+            else:
+                rect1315.setFill("white")
+                i = 1
+
+        elif isClicked(rect141, mousePos):
+            if i == 1:
+                rect141.setFill("black")
+                i = 2
+            else:
+                rect141.setFill("white")
+                i = 1
+        elif isClicked(rect142, mousePos):
+            if i == 1:
+                rect142.setFill("black")
+                i = 2
+            else:
+                rect142.setFill("white")
+                i = 1
+        elif isClicked(rect143, mousePos):
+            if i == 1:
+                rect143.setFill("black")
+                i = 2
+            else:
+                rect143.setFill("white")
+                i = 1
+        elif isClicked(rect144, mousePos):
+            if i == 1:
+                rect144.setFill("black")
+                i = 2
+            else:
+                rect144.setFill("white")
+                i = 1
+        elif isClicked(rect145, mousePos):
+            if i == 1:
+                rect145.setFill("black")
+                i = 2
+            else:
+                rect145.setFill("white")
+                i = 1
+        elif isClicked(rect146, mousePos):
+            if i == 1:
+                rect146.setFill("black")
+                i = 2
+            else:
+                rect146.setFill("white")
+                i = 1
+        elif isClicked(rect147, mousePos):
+            if i == 1:
+                rect147.setFill("black")
+                i = 2
+            else:
+                rect147.setFill("white")
+                i = 1
+        elif isClicked(rect148, mousePos):
+            if i == 1:
+                rect148.setFill("black")
+                i = 2
+            else:
+                rect148.setFill("white")
+                i = 1
+        elif isClicked(rect149, mousePos):
+            if i == 1:
+                rect149.setFill("black")
+                i = 2
+            else:
+                rect149.setFill("white")
+                i = 1
+        elif isClicked(rect1410, mousePos):
+            if i == 1:
+                rect1410.setFill("black")
+                i = 2
+            else:
+                rect1410.setFill("white")
+                i = 1
+        elif isClicked(rect1411, mousePos):
+            if i == 1:
+                rect1411.setFill("black")
+                i = 2
+            else:
+                rect1411.setFill("white")
+                i = 1
+        elif isClicked(rect1412, mousePos):
+            if i == 1:
+                rect1412.setFill("black")
+                i = 2
+            else:
+                rect1412.setFill("white")
+                i = 1
+        elif isClicked(rect1413, mousePos):
+            if i == 1:
+                rect1413.setFill("black")
+                i = 2
+            else:
+                rect1413.setFill("white")
+                i = 1
+        elif isClicked(rect1414, mousePos):
+            if i == 1:
+                rect1414.setFill("black")
+                i = 2
+            else:
+                rect1414.setFill("white")
+                i = 1
+        elif isClicked(rect1415, mousePos):
+            if i == 1:
+                rect1415.setFill("black")
+                i = 2
+            else:
+                rect1415.setFill("white")
+                i = 1
+
+        elif isClicked(rect151, mousePos):
+            if i == 1:
+                rect151.setFill("black")
+                i = 2
+            else:
+                rect151.setFill("white")
+                i = 1
+        elif isClicked(rect152, mousePos):
+            if i == 1:
+                rect152.setFill("black")
+                i = 2
+            else:
+                rect152.setFill("white")
+                i = 1
+        elif isClicked(rect153, mousePos):
+            if i == 1:
+                rect153.setFill("black")
+                i = 2
+            else:
+                rect153.setFill("white")
+                i = 1
+        elif isClicked(rect154, mousePos):
+            if i == 1:
+                rect154.setFill("black")
+                i = 2
+            else:
+                rect154.setFill("white")
+                i = 1
+        elif isClicked(rect155, mousePos):
+            if i == 1:
+                rect155.setFill("black")
+                i = 2
+            else:
+                rect155.setFill("white")
+                i = 1
+        elif isClicked(rect156, mousePos):
+            if i == 1:
+                rect156.setFill("black")
+                i = 2
+            else:
+                rect156.setFill("white")
+                i = 1
+        elif isClicked(rect157, mousePos):
+            if i == 1:
+                rect157.setFill("black")
+                i = 2
+            else:
+                rect157.setFill("white")
+                i = 1
+        elif isClicked(rect158, mousePos):
+            if i == 1:
+                rect158.setFill("black")
+                i = 2
+            else:
+                rect158.setFill("white")
+                i = 1
+        elif isClicked(rect159, mousePos):
+            if i == 1:
+                rect159.setFill("black")
+                i = 2
+            else:
+                rect159.setFill("white")
+                i = 1
+        elif isClicked(rect1510, mousePos):
+            if i == 1:
+                rect1510.setFill("black")
+                i = 2
+            else:
+                rect1510.setFill("white")
+                i = 1
+        elif isClicked(rect1511, mousePos):
+            if i == 1:
+                rect1511.setFill("black")
+                i = 2
+            else:
+                rect1511.setFill("white")
+                i = 1
+        elif isClicked(rect1512, mousePos):
+            if i == 1:
+                rect1512.setFill("black")
+                i = 2
+            else:
+                rect1512.setFill("white")
+                i = 1
+        elif isClicked(rect1513, mousePos):
+            if i == 1:
+                rect1513.setFill("black")
+                i = 2
+            else:
+                rect1513.setFill("white")
+                i = 1
+        elif isClicked(rect1514, mousePos):
+            if i == 1:
+                rect1514.setFill("black")
+                i = 2
+            else:
+                rect1514.setFill("white")
+                i = 1
+        elif isClicked(rect1515, mousePos):
+            if i == 1:
+                rect1515.setFill("black")
+                i = 2
+            else:
+                rect1515.setFill("white")
+                i = 1
 
     win.close()
 
