@@ -1,13 +1,16 @@
+from typing import List
+from Gomoku import *
+
 def getHorizontals(board, player):
     # * for piece placed, b for blocked square, o for open square
     horizontals = ['' for i in range(15)]
     for i in range(15):
         for j in range(15):
-            if board[i][j] == 3 - player:
+            if board[i][j] == 3 - player:   # your pieces
                 horizontals[i] += '*'
-            elif board[i][j] == 0:
+            elif board[i][j] == 0:          # empty space
                 horizontals[i] += 'o'
-            elif board[i][j] == player:
+            elif board[i][j] == player:     # other person's space
                 horizontals[i] += 'b'
     return horizontals
 
@@ -29,9 +32,9 @@ def getVerticals(board, player):
 def getLeftDiags(board, player):
     diags = ['' for i in range(21)]
     for i in range(15):
-        if board[i][i] == 3 - player:
+        if board[i][i] == 3 - player:  
             diags[0] += 'x'
-        elif board[i][i] == 0:
+        elif board[i][i] == 0:         # empty space
             diags[0] += 'o'
         elif board[i][i] == player:
             diags[0] += '*'
@@ -188,6 +191,114 @@ def checkWinner(board, player):
     return False
 
 
+    #possibly change checkRow to take in an int
+    #5 for win already done
+    #4 will be found in groups of 3s, but need to do for need to block in open state
+    #3 for needed block on either side
+    #2 for check if two 2s collide with each other
+        #check if 
+    #make a copy of the file or go into a new branch
+
+
+
+'''
+def placePiece(arr: [str], space: int, color: int, num: int):
+    if arr[space + 1] == "o":   
+            arr[space + 1] = "*" # do we just say where we want the next token or actually place it  would need to say what color the piece is
+                                 # need to update the actual board and end turn 
+    elif arr[space + 1] in  "x*":
+        if arr[space - num] == "o":  
+            arr[space - num] = "*"    #num is 4 in check4
+'''
+
+##########################################
+##           make columns rows          ##
+##########################################
+def make_column_row(legit_puzzle, j):
+    column = []
+    for row in legit_puzzle:
+        column.append(row[j])
+    string_column = ''.join(column)
+    return string_column
+
+
+def make_invert(legit_puzzle):          #this is making colums rows
+   invert = []
+   for j in range(0,15):
+      column = make_column_row(legit_puzzle, j)
+      invert.append(column)
+   return invert
+
+
+def check_forward(legit_puzzle, word):
+    row_num = 0
+    while row_num <= 14:
+        if legit_puzzle[row_num].find(word) != -1:
+            col_num = legit_puzzle[row_num].find(word)
+            return (row_num, col_num)
+        row_num += 1
+
+
+def check_down(invert, word):
+    col_num = 0
+    while col_num <= 9:
+        if invert[col_num].find(word) != -1:
+            row_num = invert[col_num].find(word)
+            #return word + ": (UP) row: " + str(row_num) + " column: " + str(col_num)
+            return (row_num, col_num)
+        col_num += 1
+    #else:
+        #pass
+
+
+def check_diagonal(legit_puzzle, word):
+    row_num = 0
+    col_num = 0
+    index = 0
+    #have a value to store the first letter of the word when found
+    #for loop from row 0-9, then another from col 0-9
+    while row_num <= 9:
+        if legit_puzzle[row_num + index][col_num + index] == word[index]:
+            index += 1
+            if len(word) == index:
+                return (row_num, col_num)
+            elif col_num >= 14: #this is just to catch row_num and col_num, nothing to do with indicies
+                col_num = 0
+                row_num += 1
+                if row_num + index > 14:
+                    index = 0
+                    col_num += 1
+            elif row_num + index > 14:
+                index = 0 #check to make sure the index resets to 0
+                col_num += 1
+                if col_num > 14:
+                    col_num = 0
+                    row_num += 1
+            elif col_num + index > 14:
+                index = 0 #check to make sure the index resets to 0
+                col_num += 1
+                if col_num > 14:
+                    col_num = 0
+                    row_num += 1
+                elif row_num + index > 14:
+                    index = 0
+        
+        else:
+            index = 0
+            col_num += 1
+            if col_num > 14:
+                col_num = 0
+                row_num += 1
+                if row_num + index > 14:
+                    index = 0
+
+
+
+
+
+
+
+
 class miniMaxAgent():
 
     def __init__(self):
@@ -211,6 +322,34 @@ class miniMaxAgent():
         bestmove = None
 
         # INSERT BLOCKING CODE/CHECK
+        # THIS DOES OFFENCE 4s and 3s also!
+        priority = [["****", "xxxx"], ["xxx", "***"]]
+        #fours = ["xxxx", "****"]
+        #threes = ["xxx", "***"]
+        inv_BOARD = make_invert(BOARD)
+        for string in priority:
+            for i in range(len(string)):
+                if i == ["xxxx", "****"]:
+                    ind_pl = 4
+                else:
+                    ind_pl = 3
+                if check_forward(BOARD, string[i]) != None:                               #CHECKS HORIZONTAL 4S
+                    tup = check_forward(BOARD, string[i])
+                    if (tup[0] -1) >= 0 and BOARD[tup[0]-1][tup[1]] == "o":          #if space before string of 4 is empty
+                        self.bestmove = (tup[0] - 1, tup[1])
+                    elif (tup[0] + ind_pl) <= 14 and BOARD[tup[0] + ind_pl][tup[1]] == "o":    #if space before string of 4 is full and space after string of 4s is empty
+                        self.bestmove = (tup[0] + ind_pl, tup[1])
+                elif check_down(inv_BOARD, string[i]) != None:                            #CHECKS VERTICAL 4S
+                    tup = check_down(inv_BOARD, string[i])  
+                    if (tup[0] -1) >= 0 and inv_BOARD[tup[0]-1][tup[1]] == "o":          
+                        self.bestmove = (tup[0] - 1, tup[1])
+                    elif (tup[0] + ind_pl) <= 14 and inv_BOARD[tup[0] + ind_pl][tup[1]] == "o":    
+                        self.bestmove = (tup[0] + ind_pl, tup[1])
+                elif check_diagonal(BOARD, string[i]):                                    #OH, ONLY CHECKS LEADING DIAGONLS. I CAN FLIP THE BOARD AND MAKE IT DO BOTH, BUT LET'S SEE HOW THIS GOES FIRST
+                    if (tup[0] -1) >= 0 and inv_BOARD[tup[0]-1][tup[1]] == "o":         
+                        self.bestmove = (tup[0] - 1, tup[1])
+                    elif (tup[0] + ind_pl) <= 14 and inv_BOARD[tup[0] + ind_pl][tup[1]] == "o":    
+                        self.bestmove = (tup[0] + ind_pl, tup[1])
 
         for score, row, col in moves:
 
