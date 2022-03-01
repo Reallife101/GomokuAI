@@ -33,7 +33,7 @@ def main():
                     if i == 1:
                         rect.setFill("black")
                         i = 2
-                     else:
+                    else:
                         rect.setFill("white")
                         i = 1
     win.close()
