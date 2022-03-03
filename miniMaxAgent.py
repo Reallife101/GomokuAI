@@ -323,9 +323,10 @@ class miniMaxAgent():
 
         # INSERT BLOCKING CODE/CHECK
         # THIS DOES OFFENCE 4s and 3s also!
+        block = False
         priority = [["****", "xxxx"], ["xxx", "***"]]
         #fours = ["xxxx", "****"]
-        #threes = ["xxx", "***"]
+        #threes = ["xxx", "***"] 
         inv_BOARD = make_invert(BOARD)
         for string in priority:
             for i in range(len(string)):
@@ -333,38 +334,45 @@ class miniMaxAgent():
                     ind_pl = 4
                 else:
                     ind_pl = 3
-                if check_forward(BOARD, string[i]) != None:                               #CHECKS HORIZONTAL 4S
+                if check_forward(BOARD, string[i]) != None:                               #CHECKS HORIZONTAL 4s and 3s
                     tup = check_forward(BOARD, string[i])
                     if (tup[0] -1) >= 0 and BOARD[tup[0]-1][tup[1]] == "o":          #if space before string of 4 is empty
                         self.bestmove = (tup[0] - 1, tup[1])
+                        block = True
                     elif (tup[0] + ind_pl) <= 14 and BOARD[tup[0] + ind_pl][tup[1]] == "o":    #if space before string of 4 is full and space after string of 4s is empty
                         self.bestmove = (tup[0] + ind_pl, tup[1])
-                elif check_down(inv_BOARD, string[i]) != None:                            #CHECKS VERTICAL 4S
+                        block = True
+                elif check_down(inv_BOARD, string[i]) != None:                            #CHECKS VERTICAL 4S and 3s
                     tup = check_down(inv_BOARD, string[i])  
                     if (tup[0] -1) >= 0 and inv_BOARD[tup[0]-1][tup[1]] == "o":          
                         self.bestmove = (tup[0] - 1, tup[1])
+                        block = True
                     elif (tup[0] + ind_pl) <= 14 and inv_BOARD[tup[0] + ind_pl][tup[1]] == "o":    
                         self.bestmove = (tup[0] + ind_pl, tup[1])
-                elif check_diagonal(BOARD, string[i]):                                    #OH, ONLY CHECKS LEADING DIAGONLS. I CAN FLIP THE BOARD AND MAKE IT DO BOTH, BUT LET'S SEE HOW THIS GOES FIRST
+                        block = True
+                elif check_diagonal(BOARD, string[i]):                                    #CHECKS DIAGONAL 4s and 3s
                     if (tup[0] -1) >= 0 and inv_BOARD[tup[0]-1][tup[1]] == "o":         
                         self.bestmove = (tup[0] - 1, tup[1])
+                        block = True
                     elif (tup[0] + ind_pl) <= 14 and inv_BOARD[tup[0] + ind_pl][tup[1]] == "o":    
                         self.bestmove = (tup[0] + ind_pl, tup[1])
+                        block = True
+        if block == False:
+            for score, row, col in moves:
 
-        for score, row, col in moves:
+                self.board[row][col] = currPlayer
+                nextPlayer = 3 - currPlayer
+                score = -self.minimaxHelper(nextPlayer, depth - 1, -beta, -alpha)
+                self.board[row][col] = 0
 
-            self.board[row][col] = currPlayer
-            nextPlayer = 3 - currPlayer
-            score = -self.minimaxHelper(nextPlayer, depth - 1, -beta, -alpha)
-            self.board[row][col] = 0
+                if score > alpha:
+                    alpha = score
+                    bestmove = (row, col)
+                    if alpha >= beta:
+                        break
 
-            if score > alpha:
-                alpha = score
-                bestmove = (row, col)
-                if alpha >= beta:
-                    break
+            if depth == self.maxdepth and bestmove:
+                self.bestmove = bestmove
 
-        if depth == self.maxdepth and bestmove:
-            self.bestmove = bestmove
+            return alpha
 
-        return alpha
