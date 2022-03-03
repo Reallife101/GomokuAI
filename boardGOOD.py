@@ -19,7 +19,7 @@ def main():
         for j in range(15):
             newSubRect = Rectangle(Point(50*(j+1), i*50), Point(j*50, 50*(i+1)))
             newSubRect.setFill('purple')
-            newSubRect.append(newSubRect)
+            newRect.append(newSubRect)
         rects.append(newRect)
     for rect in rects:
         for subRect in rect:
@@ -31,10 +31,10 @@ def main():
             for subRect in rect:
                 if isClicked(subRect, mousePos):
                     if i == 1:
-                        rect.setFill("black")
+                        subRect.setFill("black")
                         i = 2
                     else:
-                        rect.setFill("white")
+                        subRect.setFill("white")
                         i = 1
     win.close()
 
