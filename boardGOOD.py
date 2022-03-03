@@ -36,7 +36,5 @@ def main():
                     else:
                         rect.setFill("white")
                         i = 1
-    win.close()
-
 if __name__ == '__main__':
     main()
