@@ -1,5 +1,6 @@
 from graphics import *
 import numpy as np
+from miniMaxAgentEDIT import *
 
 
 def isClicked(rect, mousePos):
@@ -11,13 +12,40 @@ def isClicked(rect, mousePos):
     else:
         return 0
 
+
 def main():
+    turn = 0
+
+    win0 = GraphWin('ExampleWindow0', 750, 750)
+    second = Rectangle(Point(350, 300), Point(20, 400))
+    second.setFill('white')
+    first = Rectangle(Point(730, 300), Point(360, 400))
+    first.setFill('black')
+
+    first.draw(win0)
+    second.draw(win0)
+
+    while turn == 0:
+        selects = win0.getMouse()
+        if isClicked(first, selects):
+            turn = 1
+        elif isClicked(second, selects):
+            turn = 2
+
+    win0.close()
+    print(turn)
+
+
+
+    hidden_board = [[0]*15]*15
+
+
     win = GraphWin('ExampleWindow', 750, 750)
     rects = []
     for i in range(15):
         newRect = []
         for j in range(15):
-            newSubRect = Rectangle(Point(50*(j+1), i*50), Point(j*50, 50*(i+1)))
+            newSubRect = Rectangle(Point(50 * (j + 1), i * 50), Point(j * 50, 50 * (i + 1)))
             newSubRect.setFill('purple')
             newRect.append(newSubRect)
         rects.append(newRect)
@@ -25,18 +53,73 @@ def main():
         for subRect in rect:
             subRect.draw(win)
     i = 1
+    aiAgent = miniMaxAgent()
     while True:
-        mousePos = win.getMouse()
-        for rect in rects:
-            for subRect in rect:
-                if isClicked(subRect, mousePos):
-                    if i == 1:
-                        subRect.setFill("black")
-                        i = 2
-                    else:
-                        subRect.setFill("white")
-                        i = 1
+        mousepos = win.getMouse()
+        score, row, col = None, -1, -1
+        if i == turn:
+            score, row, col = aiAgent.minimax(turn)
+            print('update board')
+            aiAgent.board[row][col] = (1 if turn != 1 else 2)
+        # mousepos = win.getMouse()
+        for a, rect in enumerate(rects):
+            for b, subRect in enumerate(rect):
+                if i == turn: # it is the human's turn
+                    if isClicked(subRect, mousepos):
+                        print('update board 2')
+                        aiAgent.board[a][b] = turn
+                        if turn == 1:
+                            subRect.setFill("black")
+                            i = 2
+                        else:
+                            subRect.setFill("white")
+                            i = 1
+                else: # agent turn
+                    if row == a and col == b:
+                        if i == 1:
+                            subRect.setFill("black")
+                            i = 2
+                        else:
+                            subRect.setFill("white")
+                            i = 1
+                # if i == 1:
+                #     subRect.setFill("black")
+                #     i = 2
+                # else:
+                #     subRect.setFill("white")
+                #     i = 1
     win.close()
+
 
 if __name__ == '__main__':
     main()
+
+# chessboard = [[0 for j in range(board_size)] for i in range(board_size)]
+# agent1 = myAI2.miniMaxAgent()
+# agent1.board = chessboard
+# agent2 = myAI2.miniMaxAgent()
+# agent2.board = chessboard
+#
+# while True:
+#     while not winner:
+#         start_time = pygame.time.get_ticks()  # start turn timer
+#
+#         if currPlayer == player1 and p1_controls == 'human':
+#             row, col = clickToPos()
+#             while not validatePos((row, col), chessboard):
+#                 row, col = clickToPos()
+#
+#         elif currPlayer == player1 and p1_controls == 'computer':
+#             score, row, col = agent1.minimax(1, 2)
+#
+#         elif currPlayer == player2 and p2_controls == 'human':
+#             row, col = clickToPos()
+#             while not validatePos((row, col), chessboard):
+#                 row, col = clickToPos()
+#
+#         elif currPlayer == player2 and p2_controls == 'computer':
+#             score, row, col = agent2.minimax(2, 2)
+#
+#         chessboard[row][col] = currPlayer
+#         winner = checkWinner(chessboard, currPlayer)
+#         posToPiece((row, col), currPlayer)
