@@ -56,7 +56,7 @@ def main():
     aiAgent = miniMaxAgent()
     # aiAgent.board = hidden_board
     mousepos = None
-    while True:
+    while not checkWinner(aiAgent.board, i):
         print(i)
         score, row, col = None, -1, -1
         if i != turn:
@@ -73,9 +73,9 @@ def main():
                 if i == turn: # it is the human's turn
                     if isClicked(subRect, mousepos):
                         print('update board 2')
-                        # if(aiAgent.board[a][b] ==)
-                        aiAgent.board[a][b] = turn
-                        if turn == 1:
+                        if aiAgent.board[a][b] == 0:
+                            aiAgent.board[a][b] = turn
+                        if i == 1:
                             subRect.setFill("black")
                             i = 2
                             turn_played = True

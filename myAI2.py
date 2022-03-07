@@ -4,11 +4,11 @@ def getHorizontals(board, player):
     for i in range(15):
         for j in range(15):
             if board[i][j] == 3 - player:
-                horizontals[i] += '*'
+                horizontals[i] += 'x'
             elif board[i][j] == 0:
                 horizontals[i] += 'o'
             elif board[i][j] == player:
-                horizontals[i] += 'b'
+                horizontals[i] += '*'
     return horizontals
 
 
@@ -18,7 +18,7 @@ def getVerticals(board, player):
     for i in range(15):
         for j in range(15):
             if board[i][j] == 3 - player:
-                verticals[j] += 'b'
+                verticals[j] += 'x'
             elif board[i][j] == 0:
                 verticals[j] += 'o'
             elif board[i][j] == player:
