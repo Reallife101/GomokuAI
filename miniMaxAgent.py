@@ -324,36 +324,45 @@ class miniMaxAgent():
         # INSERT BLOCKING CODE/CHECK
         # THIS DOES OFFENCE 4s and 3s also!
         block = False
-        priority = ["****", "xxxx","xxx", "***"]
+        priority = ["1111", "2222","222", "111"]
         #fours = ["xxxx", "****"]
         #threes = ["xxx", "***"] 
-        inv_BOARD = make_invert(BOARD)
+        str_board = []
+        for row in self.board:
+            str_row = ""
+            for num in row:
+                str_row += num
+            str_board.append(str_row)
+
+
+
+        inv_BOARD = make_invert(str_board)
         for word in priority:
-            if word == "****" or word == "xxxx":
+            if word == "1111" or word == "2222":
                 ind_pl = 4
             else:
                 ind_pl = 3
-            if check_forward(BOARD, word) != None:                               #CHECKS HORIZONTAL 4s and 3s
-                tup = check_forward(BOARD, word)
-                if (tup[0] -1) >= 0 and BOARD[tup[0]-1][tup[1]] == "o":          #if space before string of 4 is empty
+            if check_forward(BOARD, self.board) != None:                               #CHECKS HORIZONTAL 4s and 3s
+                tup = check_forward(BOARD, self.board)
+                if (tup[0] -1) >= 0 and BOARD[tup[0]-1][tup[1]] == "0":          #if space before string of 4 is empty
                     self.bestmove = (tup[0] - 1, tup[1])
                     block = True
-                elif (tup[0] + ind_pl) <= 14 and BOARD[tup[0] + ind_pl][tup[1]] == "o":    #if space before string of 4 is full and space after string of 4s is empty
+                elif (tup[0] + ind_pl) <= 14 and self.board[tup[0] + ind_pl][tup[1]] == "0":    #if space before string of 4 is full and space after string of 4s is empty
                     self.bestmove = (tup[0] + ind_pl, tup[1])
                     block = True
             elif check_down(inv_BOARD, word) != None:                            #CHECKS VERTICAL 4S and 3s
                 tup = check_down(inv_BOARD, word)  
-                if (tup[0] -1) >= 0 and inv_BOARD[tup[0]-1][tup[1]] == "o":          
+                if (tup[0] -1) >= 0 and inv_BOARD[tup[0]-1][tup[1]] == "0":          
                     self.bestmove = (tup[0] - 1, tup[1])
                     block = True
-                elif (tup[0] + ind_pl) <= 14 and inv_BOARD[tup[0] + ind_pl][tup[1]] == "o":    
+                elif (tup[0] + ind_pl) <= 14 and inv_BOARD[tup[0] + ind_pl][tup[1]] == "0":    
                     self.bestmove = (tup[0] + ind_pl, tup[1])
                     block = True
-            elif check_diagonal(BOARD, word):                                    #CHECKS DIAGONAL 4s and 3s
-                if (tup[0] -1) >= 0 and inv_BOARD[tup[0]-1][tup[1]] == "o":         
+            elif check_diagonal(self.board, word):                                    #CHECKS DIAGONAL 4s and 3s
+                if (tup[0] -1) >= 0 and inv_BOARD[tup[0]-1][tup[1]] == "0":         
                     self.bestmove = (tup[0] - 1, tup[1])
                     block = True
-                elif (tup[0] + ind_pl) <= 14 and inv_BOARD[tup[0] + ind_pl][tup[1]] == "o":    
+                elif (tup[0] + ind_pl) <= 14 and inv_BOARD[tup[0] + ind_pl][tup[1]] == "0":    
                     self.bestmove = (tup[0] + ind_pl, tup[1])
                     block = True
         if block == False:
