@@ -55,21 +55,24 @@ def main():
     i = 1
     aiAgent = miniMaxAgent()
     # aiAgent.board = hidden_board
+    mousepos = None
     while True:
         print(i)
-        mousepos = win.getMouse()
         score, row, col = None, -1, -1
-        if i == turn:
+        if i != turn:
             print('turn')
             score, row, col = aiAgent.minimax(turn)
             print('update board')
             aiAgent.board[row][col] = (1 if turn != 1 else 2)
-        # mousepos = win.getMouse()
+        else:
+            mousepos = win.getMouse()
+
         for a, rect in enumerate(rects):
             for b, subRect in enumerate(rect):
                 if i == turn: # it is the human's turn
                     if isClicked(subRect, mousepos):
                         print('update board 2')
+                        # if(aiAgent.board[a][b] ==)
                         aiAgent.board[a][b] = turn
                         if turn == 1:
                             subRect.setFill("black")
