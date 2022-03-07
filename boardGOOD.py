@@ -1,6 +1,6 @@
 from graphics import *
 import numpy as np
-from miniMaxAgentEDIT import *
+from myAI2 import *
 
 
 def isClicked(rect, mousePos):
@@ -37,7 +37,7 @@ def main():
 
 
 
-    hidden_board = [[0]*15]*15
+    # hidden_board = [[0 for j in range(15)] for i in range(15)]
 
 
     win = GraphWin('ExampleWindow', 750, 750)
@@ -54,10 +54,13 @@ def main():
             subRect.draw(win)
     i = 1
     aiAgent = miniMaxAgent()
+    # aiAgent.board = hidden_board
     while True:
+        print(i)
         mousepos = win.getMouse()
         score, row, col = None, -1, -1
         if i == turn:
+            print('turn')
             score, row, col = aiAgent.minimax(turn)
             print('update board')
             aiAgent.board[row][col] = (1 if turn != 1 else 2)
