@@ -61,12 +61,13 @@ def main():
         score, row, col = None, -1, -1
         if i != turn:
             print('turn')
-            score, row, col = aiAgent.minimax(turn)
+            score, row, col = aiAgent.minimax(turn, depth=2)
             print('update board')
             aiAgent.board[row][col] = (1 if turn != 1 else 2)
         else:
             mousepos = win.getMouse()
 
+        turn_played = False
         for a, rect in enumerate(rects):
             for b, subRect in enumerate(rect):
                 if i == turn: # it is the human's turn
@@ -77,17 +78,25 @@ def main():
                         if turn == 1:
                             subRect.setFill("black")
                             i = 2
+                            turn_played = True
                         else:
                             subRect.setFill("white")
                             i = 1
+                            turn_played = True
                 else: # agent turn
                     if row == a and col == b:
                         if i == 1:
                             subRect.setFill("black")
                             i = 2
+                            turn_played = True
                         else:
                             subRect.setFill("white")
                             i = 1
+                            turn_played = True
+                if turn_played:
+                    break
+            if turn_played:
+                break
                 # if i == 1:
                 #     subRect.setFill("black")
                 #     i = 2
