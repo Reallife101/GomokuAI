@@ -63,9 +63,9 @@ def getRightDiags(board, player):
     for i in range(15):
         if board[i][14 - i] == 3 - player:
             diags[0] += 'x'
-        elif board[i][18 - i] == 0:
+        elif board[i][14 - i] == 0:
             diags[0] += 'o'
-        elif board[i][18 - i] == player:
+        elif board[i][14 - i] == player:
             diags[0] += '*'
     for i in range(10):
         for j in range(15):
@@ -257,7 +257,7 @@ def check_diagonal(legit_puzzle, word):
     index = 0
     #have a value to store the first letter of the word when found
     #for loop from row 0-9, then another from col 0-9
-    while row_num <= 9:
+    while row_num <= 14:
         if legit_puzzle[row_num + index][col_num + index] == word[index]:
             index += 1
             if len(word) == index:
@@ -323,48 +323,62 @@ class miniMaxAgent():
 
         # INSERT BLOCKING CODE/CHECK
         # THIS DOES OFFENCE 4s and 3s also!
-        priority = [["xxxx", "****"], ["xxx", "***"]]
-        fours = ["xxxx", "****"]
-        threes = ["xxx", "***"]
-        inv_BOARD = make_invert(BOARD)
-        for string in priority:
-            for i in range(len(string)):
-                if i == ["xxxx", "****"]:
-                    ind_pl = 4
-                else:
-                    ind_pl = 3
-                if check_forward(BOARD, string[i]) != None:                               #CHECKS HORIZONTAL 4S
-                    tup = check_forward(BOARD, string[i])
-                    if (tup[0] -1) >= 0 and BOARD[tup[0]-1][tup[1]] == "o":          #if space before string of 4 is empty
-                        self.bestmove = (tup[0] - 1, tup[1])
-                    elif (tup[0] + ind_pl) <= 14 and BOARD[tup[0] + ind_pl][tup[1]] == "o":    #if space before string of 4 is full and space after string of 4s is empty
-                        self.bestmove = (tup[0] + ind_pl, tup[1])
-                elif check_down(inv_BOARD, string[i]) != None:                            #CHECKS VERTICAL 4S
-                    tup = check_down(inv_BOARD, string[i])  
-                    if (tup[0] -1) >= 0 and inv_BOARD[tup[0]-1][tup[1]] == "o":          
-                        self.bestmove = (tup[0] - 1, tup[1])
-                    elif (tup[0] + ind_pl) <= 14 and inv_BOARD[tup[0] + ind_pl][tup[1]] == "o":    
-                        self.bestmove = (tup[0] + ind_pl, tup[1])
-                elif check_diagonal(BOARD, string[i]):
-                    if (tup[0] -1) >= 0 and inv_BOARD[tup[0]-1][tup[1]] == "o":         
-                        self.bestmove = (tup[0] - 1, tup[1])
-                    elif (tup[0] + ind_pl) <= 14 and inv_BOARD[tup[0] + ind_pl][tup[1]] == "o":    
-                        self.bestmove = (tup[0] + ind_pl, tup[1])
+        block = False
+        priority = ["1111", "2222","222", "111"]
+        #fours = ["xxxx", "****"]
+        #threes = ["xxx", "***"] 
+        str_board = []
+        for row in self.board:
+            str_row = ""
+            for num in row:
+                str_row += num
+            str_board.append(str_row)
 
-        for score, row, col in moves:
 
-            self.board[row][col] = currPlayer
-            nextPlayer = 3 - currPlayer
-            score = -self.minimaxHelper(nextPlayer, depth - 1, -beta, -alpha)
-            self.board[row][col] = 0
+        inv_BOARD = make_invert(str_board)
+        for word in priority:
+            if word == "1111" or word == "2222":
+                ind_pl = 4
+            else:
+                ind_pl = 3
+            if check_forward(str_board, word) != None:                               #CHECKS HORIZONTAL 4s and 3s
+                tup = check_forward(str_board, word)
+                if (tup[0] -1) >= 0 and str_board[tup[0]-1][tup[1]] == "0":          #if space before string of 4 is empty
+                    self.bestmove = (tup[0] - 1, tup[1])
+                    block = True
+                elif (tup[0] + ind_pl) <= 14 and str_board[tup[0] + ind_pl][tup[1]] == "0":    #if space before string of 4 is full and space after string of 4s is empty
+                    self.bestmove = (tup[0] + ind_pl, tup[1])
+                    block = True
+            elif check_down(inv_BOARD, word) != None:                            #CHECKS VERTICAL 4S and 3s
+                tup = check_down(inv_BOARD, word)  
+                if (tup[0] -1) >= 0 and inv_BOARD[tup[0]-1][tup[1]] == "0":          
+                    self.bestmove = (tup[0] - 1, tup[1])
+                    block = True
+                elif (tup[0] + ind_pl) <= 14 and inv_BOARD[tup[0] + ind_pl][tup[1]] == "0":    
+                    self.bestmove = (tup[0] + ind_pl, tup[1])
+                    block = True
+            elif check_diagonal(str_board, word):                                    #CHECKS DIAGONAL 4s and 3s
+                if (tup[0] -1) >= 0 and inv_BOARD[tup[0]-1][tup[1]] == "0":         
+                    self.bestmove = (tup[0] - 1, tup[1])
+                    block = True
+                elif (tup[0] + ind_pl) <= 14 and inv_BOARD[tup[0] + ind_pl][tup[1]] == "0":    
+                    self.bestmove = (tup[0] + ind_pl, tup[1])
+                    block = True
+        if block == False:
+            for score, row, col in moves:
 
-            if score > alpha:
-                alpha = score
-                bestmove = (row, col)
-                if alpha >= beta:
-                    break
+                self.board[row][col] = currPlayer
+                nextPlayer = 3 - currPlayer
+                score = -self.minimaxHelper(nextPlayer, depth - 1, -beta, -alpha)
+                self.board[row][col] = 0
 
-        if depth == self.maxdepth and bestmove:
-            self.bestmove = bestmove
+                if score > alpha:
+                    alpha = score
+                    bestmove = (row, col)
+                    if alpha >= beta:
+                        break
 
-        return alpha
+            if depth == self.maxdepth and bestmove:
+                self.bestmove = bestmove
+
+            return alpha
