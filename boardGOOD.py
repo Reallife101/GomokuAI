@@ -104,7 +104,7 @@ def main():
                 #     subRect.setFill("white")
                 #     i = 1
     print("win win")
-    time.sleep(10)
+    time.sleep(2)
     win.close()
 
 
