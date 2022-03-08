@@ -1,7 +1,7 @@
 from graphics import *
 import numpy as np
 from myAI2 import *
-
+import time
 
 def isClicked(rect, mousePos):
     p1 = rect.getP1()
@@ -103,6 +103,8 @@ def main():
                 # else:
                 #     subRect.setFill("white")
                 #     i = 1
+    print("win win")
+    time.sleep(10)
     win.close()
 
 
