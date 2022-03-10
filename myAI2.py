@@ -11,6 +11,7 @@ def getHorizontals(board, player):
                 horizontals[i] += '*'
     return horizontals
 
+
 def getVerticals(board, player):
     # * for piece placed, b for blocked square, o for open square
     verticals = ['' for i in range(15)]
@@ -23,6 +24,7 @@ def getVerticals(board, player):
             elif board[i][j] == player:
                 verticals[j] += '*'
     return verticals
+
 
 def getLeftDiags(board, player):
     diags = ['' for i in range(21)]
@@ -52,6 +54,7 @@ def getLeftDiags(board, player):
 
     return diags
 
+
 def getRightDiags(board, player):
     diags = ['' for i in range(21)]
     for i in range(15):
@@ -77,7 +80,9 @@ def getRightDiags(board, player):
                 diags[i + 11] += 'o'
             elif board[j][(13 - j) - i] == player:
                 diags[i + 11] += '*'
+
     return diags
+
 
 def eval(board, player):
     newBoard = board.copy()
@@ -93,19 +98,26 @@ def eval(board, player):
     for line in allLines:
         score += evalLine(line)
     return score
+
+
 def evalLine(line):
     # * for piece placed, x for blocked square, o for open square
+
     five = '*****'
+
     open_four = 'o****o'
+
     closed_four1 = 'x****o'
     closed_four2 = 'o****x'
     closed_four3 = '*o***'
     closed_four4 = '***o*'
     closed_four5 = '**o**'
+
     open_three1 = 'o***oo'
     open_three2 = 'oo***o'
     open_three3 = 'o*o**o'
     open_three4 = 'o**o*o'
+
     closed_three1 = 'x***oo'
     closed_three2 = 'oo***x'
     closed_three3 = 'xo***ox'
@@ -113,9 +125,11 @@ def evalLine(line):
     closed_three5 = 'x*o**o'
     closed_three6 = 'x**o*o'
     closed_three6 = 'o**o*x'
+
     open_two1 = 'o**o'
     open_two2 = 'o*o*o'
     open_two3 = 'o*oo*o'
+
     closed_two1 = 'x**o'
     closed_two2 = 'x*o*o'
     closed_two3 = 'o*o*x'
@@ -141,6 +155,7 @@ def evalLine(line):
 
     return score
 
+
 def getMoves(board):
     moves = []
     for i in range(15):
@@ -151,6 +166,7 @@ def getMoves(board):
     moves.sort()
     moves.reverse()
     return moves
+
 
 def checkWinner(board, player):
     directions = ((1, 0), (0, 1), (1, 1), (1, -1))
@@ -171,6 +187,7 @@ def checkWinner(board, player):
                     return True
     return False
 
+
 '''
 def placePiece(arr: [str], space: int, color: int, num: int):
     if arr[space + 1] == "o":   
@@ -180,6 +197,7 @@ def placePiece(arr: [str], space: int, color: int, num: int):
         if arr[space - num] == "o":  
             arr[space - num] = "*"    #num is 4 in check4
 '''
+
 
 ##########################################
 ##           make columns rows          ##
@@ -191,12 +209,14 @@ def make_column_row(legit_puzzle, j):
     string_column = ''.join(column)
     return string_column
 
+
 def make_invert(legit_puzzle):  # this is making colums rows
     invert = []
     for j in range(0, 15):
         column = make_column_row(legit_puzzle, j)
         invert.append(column)
     return invert
+
 
 def check_forward(legit_puzzle, word):
     row_num = 0
@@ -205,6 +225,7 @@ def check_forward(legit_puzzle, word):
             col_num = legit_puzzle[row_num].find(word)
             return (row_num, col_num)
         row_num += 1
+
 
 def check_down(invert, word):
     col_num = 0
@@ -216,6 +237,7 @@ def check_down(invert, word):
         col_num += 1
     # else:
     # pass
+
 
 def check_diagonal(legit_puzzle, word):
     row_num = 0
@@ -248,6 +270,7 @@ def check_diagonal(legit_puzzle, word):
                     row_num += 1
                 elif row_num + index > 14:
                     index = 0
+
         else:
             index = 0
             col_num += 1
@@ -258,6 +281,7 @@ def check_diagonal(legit_puzzle, word):
                     index = 0
 
 class miniMaxAgent():
+
     def __init__(self):
         self.board = [[0 for j in range(15)] for i in range(15)]
         self.maxdepth = 4
